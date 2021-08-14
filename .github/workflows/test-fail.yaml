@@ -1,4 +1,4 @@
-name: Success Test
+name: Failure Test
 on:
   workflow_dispatch:
 
@@ -11,5 +11,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
+      - name: Failed step
+        shell: bash
+        run: |
+          false
+
       - name: Printout Step
+        if: failure()
         uses: ./.github/actions/dummy-action
