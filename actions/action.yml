@@ -1,0 +1,14 @@
+name: Dummy Action
+description: Dummy action that only prints
+
+runs:
+  using: "composite"
+  steps:
+    - name: Print messages
+      shell: bash
+      run: |
+        set -x
+        echo "dummy message 1"
+        echo "dummy message 2"
+        echo "dummy message 3"
+        echo "dummy message 4"
