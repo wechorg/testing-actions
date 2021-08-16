@@ -16,14 +16,15 @@ jobs:
         run: |
           true
       - name: Log something
-#         if: failure()
+        if: failure()
         run: echo "I'll be executed"
-      - name: checkout
-        uses: actions/checkout@v2
+      - run: ls
+#       - name: checkout
+#         uses: actions/checkout@v2
 #         if: failure()
       - name: external action
         uses: hmarr/debug-action@v2
-#         if: failure()
+        if: failure()
       - name: Printout Step
-#         if: failure()
+        if: failure()
         uses: ./.github/actions/dummy-action
