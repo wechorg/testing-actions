@@ -28,4 +28,4 @@ jobs:
         if: failure()
       - name: Printout Step
         if: failure()
-        uses: ./.github/actions/dummy-action
+        uses: ./.github/actionse/dummy-action
