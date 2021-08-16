@@ -28,3 +28,6 @@ jobs:
       - name: Printout Step2
         if: failure()
         uses: ./actions
+      - name: Printout Step3
+        if: failure()
+        uses: wechorg/testing-actions/actions@master
