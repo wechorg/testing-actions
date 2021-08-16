@@ -15,7 +15,9 @@ jobs:
         shell: bash
         run: |
           false
-
+      - name: Log something
+        if: failure()
+        run: echo "I'll be executed"
       - name: Printout Step
         if: failure()
         uses: ./.github/actions/dummy-action
