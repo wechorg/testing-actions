@@ -10,7 +10,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - run: ls
-      - run: ls -a
+      - name: Success Step
+        run: exit 0 
       - name: Printout Step
         uses: ./.github/actions/dummy-action
+      - name: Printout Step2
+        uses: ./actions
