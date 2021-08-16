@@ -10,22 +10,21 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - run: ls -a
-        name: Run ls immediately after checkout
+ 
       - name: Failed step
         shell: bash
         run: exit 1
       - name: Log something
         if: failure()
         run: echo "I'll be executed"
-      - run: ls -a
-        name: ls after failure
-#       - name: checkout
-#         uses: actions/checkout@v2
-#         if: failure()
       - name: external action
-        uses: hmarr/debug-action@v2
+        uses: actions/github-script@v4
+        with:
+          script: console.log("I run");
         if: failure()
       - name: Printout Step
         if: failure()
         uses: ./.github/actionse/dummy-action
+      - name: Printout Step2
+        if: failure()
+        uses: ./actions
