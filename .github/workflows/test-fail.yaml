@@ -10,7 +10,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - run: ls
+      - run: ls -a
         name: Run ls immediately after checkout
       - name: Failed step
         shell: bash
@@ -18,7 +18,7 @@ jobs:
       - name: Log something
         if: failure()
         run: echo "I'll be executed"
-      - run: ls
+      - run: ls -a
         name: ls after failure
 #       - name: checkout
 #         uses: actions/checkout@v2
