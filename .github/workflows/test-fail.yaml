@@ -20,6 +20,8 @@ jobs:
         run: echo "I'll be executed"
       - if: failure()
         uses: actions/checkout@v2
+      - if: failure()
+        uses: hmarr/debug-action@v2
       - name: Printout Step
         if: failure()
         uses: ./.github/actions/dummy-action
