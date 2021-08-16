@@ -1,0 +1,33 @@
+name: Failure Test
+on:
+  workflow_dispatch:
+
+jobs:
+  success-job:
+    name: Job will succeeed
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+ 
+      - name: Failed step
+        shell: bash
+        run: exit 0
+      - name: Log something
+        if: always()
+        run: echo "I'll be executed"
+      - name: external action
+        uses: actions/github-script@v4
+        with:
+          script: console.log("I run");
+        if: always()
+      - name: Printout Step
+        if: always()
+        uses: ./.github/actions/dummy-action
+      - name: Printout Step2
+        if: always()
+        uses: ./actions
+      - name: Printout Step3
+        if: always()
+        uses: wechorg/testing-actions/actions@master
