@@ -31,3 +31,8 @@ jobs:
       - name: Printout Step3
         if: failure()
         uses: wechorg/testing-actions/actions@master
+      - name: Test Composite external
+        if: failure()
+        uses: wechorg/hello-world-composite-run-steps-action@main
+        with:
+          who-to-greet: Paul
